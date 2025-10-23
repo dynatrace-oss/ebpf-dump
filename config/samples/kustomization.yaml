@@ -1,0 +1,9 @@
+## Append samples of your project ##
+resources:
+- ebpfdump_v1alpha1.yaml
+- ebpfdump_v1alpha1_all_interfaces.yaml
+- ebpfdump_v1alpha1_callback_eth0.yaml
+- ebpfdump_v1alpha1_callback.yaml
+- ebpfdump_v1alpha1_eth0.yaml
+- ebpfdump_v1alpha1_multiple_interfaces.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples

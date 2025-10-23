@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: callback-pod
+  namespace: ebpfdump-operator-system
+  labels:
+    app.kubernetes.io/name: callback-pod
+spec:
+  containers:
+  - name: callback-pod
+    image: localhost:5001/callback:latest
+    ports:
+      - containerPort: 8090
+        name: http-web-svc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: callback-service
+  namespace: ebpfdump-operator-system
+spec:
+  selector:
+    app.kubernetes.io/name: callback-pod
+  ports:
+    - protocol: TCP
+      port: 9376
+      targetPort: 8090

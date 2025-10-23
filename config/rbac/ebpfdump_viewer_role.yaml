@@ -1,0 +1,23 @@
+# permissions for end users to view ebpfdump.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: ebpfdump-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: ebpfdump-viewer-role
+rules:
+- apiGroups:
+  - research.dynatrace.com
+  resources:
+  - ebpfdumps
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - research.dynatrace.com
+  resources:
+  - ebpfdump/status
+  verbs:
+  - get

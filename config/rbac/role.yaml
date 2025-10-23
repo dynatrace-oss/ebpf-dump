@@ -1,0 +1,46 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - deployments/status
+  verbs:
+  - get
+- apiGroups:
+  - research.dynatrace.com
+  resources:
+  - ebpfdumps
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - research.dynatrace.com
+  resources:
+  - ebpfdumps/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - research.dynatrace.com
+  resources:
+  - ebpfdumps/status
+  verbs:
+  - get
+  - patch
+  - update

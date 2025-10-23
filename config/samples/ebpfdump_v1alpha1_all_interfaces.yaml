@@ -1,0 +1,9 @@
+apiVersion: research.dynatrace.com/v1alpha1
+kind: EbpfDump
+metadata:
+  labels:
+    app.kubernetes.io/name: ebpfdump-operator
+  name: ebpfdump-sample-all-interfaces
+  namespace: ebpfdump-operator-system
+
+# By default, listen to all interfaces
