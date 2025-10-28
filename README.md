@@ -56,7 +56,7 @@ To learn how you can set up and use the operator, please read the
 To quickly deploy the operator on your cluster, run the following:
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/dynatrace-oss/ebpfdump/main/dist/install-github.yaml
+kubectl apply -f https://raw.githubusercontent.com/dynatrace-oss/ebpf-dump/refs/heads/main/dist/install-github.yaml
 ```
 
 ## License and Attribution
